@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using PetShop.Models;
 
-namespace PetShop.Models;
+namespace PetShop.Data;
 
 public partial class ShopPetDatabaseContext : DbContext
 {
@@ -27,6 +28,10 @@ public partial class ShopPetDatabaseContext : DbContext
 
     public virtual DbSet<BookingService> BookingServices { get; set; }
 
+    public virtual DbSet<Breed> Breeds { get; set; }
+
+    public virtual DbSet<BreedPricing> BreedPricings { get; set; }
+
     public virtual DbSet<ChatMessage> ChatMessages { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }
@@ -49,8 +54,6 @@ public partial class ShopPetDatabaseContext : DbContext
 
     public virtual DbSet<PetService> PetServices { get; set; }
 
-    public virtual DbSet<PetSizePricing> PetSizePricings { get; set; }
-
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<ProductCategory> ProductCategories { get; set; }
@@ -60,6 +63,8 @@ public partial class ShopPetDatabaseContext : DbContext
     public virtual DbSet<Shift> Shifts { get; set; }
 
     public virtual DbSet<ShiftRequest> ShiftRequests { get; set; }
+
+    public virtual DbSet<Species> Species { get; set; }
 
     public virtual DbSet<Staff> Staff { get; set; }
 
@@ -89,13 +94,13 @@ public partial class ShopPetDatabaseContext : DbContext
 
     public virtual DbSet<VwBookingStatusCount> VwBookingStatusCounts { get; set; }
 
-    public virtual DbSet<VwPetWithSizePricing> VwPetWithSizePricings { get; set; }
+    public virtual DbSet<VwPetWithBreedPricing> VwPetWithBreedPricings { get; set; }
 
     public virtual DbSet<WorkSchedule> WorkSchedules { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(local);Database=SHOP_PET_Database;User Id=sa;Password=123;TrustServerCertificate=true;Trusted_Connection=SSPI;Encrypt=false;");
+        => optionsBuilder.UseSqlServer("Data Source=(local);Database=SHOP_PET_Database;User Id=sa;Password=123;TrustServerCertificate=true;Encrypt=false;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -350,6 +355,62 @@ public partial class ShopPetDatabaseContext : DbContext
                 .HasForeignKey(d => d.ServiceId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_BookingService_PetService");
+        });
+
+        modelBuilder.Entity<Breed>(entity =>
+        {
+            entity.HasKey(e => e.BreedId).HasName("PK__Breed__9C021435AEF4CA2B");
+
+            entity.ToTable("Breed");
+
+            entity.HasIndex(e => new { e.SpeciesId, e.BreedName }, "UQ_Breed").IsUnique();
+
+            entity.HasIndex(e => new { e.SpeciesId, e.BreedName }, "UQ_Species_Breed").IsUnique();
+
+            entity.Property(e => e.BreedId).HasColumnName("breed_id");
+            entity.Property(e => e.BreedName)
+                .HasMaxLength(100)
+                .HasColumnName("breed_name");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.SpeciesId).HasColumnName("species_id");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
+
+            entity.HasOne(d => d.Species).WithMany(p => p.Breeds)
+                .HasForeignKey(d => d.SpeciesId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Breed_Species");
+        });
+
+        modelBuilder.Entity<BreedPricing>(entity =>
+        {
+            entity.HasKey(e => e.BreedPricingId).HasName("PK__BreedPri__9D2483AACA02274C");
+
+            entity.ToTable("BreedPricing");
+
+            entity.HasIndex(e => new { e.ServiceId, e.BreedId }, "UQ_Service_Breed").IsUnique();
+
+            entity.Property(e => e.BreedPricingId).HasColumnName("breed_pricing_id");
+            entity.Property(e => e.BreedId).HasColumnName("breed_id");
+            entity.Property(e => e.PriceAdjust)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("price_adjust");
+            entity.Property(e => e.ServiceId).HasColumnName("service_id");
+
+            entity.HasOne(d => d.Breed).WithMany(p => p.BreedPricings)
+                .HasForeignKey(d => d.BreedId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BreedPric__breed__45544755");
+
+            entity.HasOne(d => d.Service).WithMany(p => p.BreedPricings)
+                .HasForeignKey(d => d.ServiceId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BreedPric__servi__4460231C");
         });
 
         modelBuilder.Entity<ChatMessage>(entity =>
@@ -674,9 +735,7 @@ public partial class ShopPetDatabaseContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Age).HasColumnName("age");
-            entity.Property(e => e.Breed)
-                .HasMaxLength(100)
-                .HasColumnName("breed");
+            entity.Property(e => e.BreedId).HasColumnName("breed_id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -693,9 +752,6 @@ public partial class ShopPetDatabaseContext : DbContext
             entity.Property(e => e.PetName)
                 .HasMaxLength(100)
                 .HasColumnName("pet_name");
-            entity.Property(e => e.Species)
-                .HasMaxLength(50)
-                .HasColumnName("species");
             entity.Property(e => e.UpdatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -703,6 +759,10 @@ public partial class ShopPetDatabaseContext : DbContext
             entity.Property(e => e.WeightKg)
                 .HasColumnType("decimal(5, 2)")
                 .HasColumnName("weight_kg");
+
+            entity.HasOne(d => d.Breed).WithMany(p => p.Pets)
+                .HasForeignKey(d => d.BreedId)
+                .HasConstraintName("FK_Pet_Breed");
         });
 
         modelBuilder.Entity<PetService>(entity =>
@@ -735,49 +795,6 @@ public partial class ShopPetDatabaseContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("updated_at");
-        });
-
-        modelBuilder.Entity<PetSizePricing>(entity =>
-        {
-            entity.HasKey(e => new { e.Species, e.SizeGroupCode });
-
-            entity.ToTable("PetSizePricing");
-
-            entity.Property(e => e.Species)
-                .HasMaxLength(50)
-                .HasColumnName("species");
-            entity.Property(e => e.SizeGroupCode)
-                .HasMaxLength(20)
-                .HasColumnName("size_group_code");
-            entity.Property(e => e.BathPriceMax)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("bath_price_max");
-            entity.Property(e => e.BathPriceMin)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("bath_price_min");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("created_at");
-            entity.Property(e => e.DisplayName)
-                .HasMaxLength(50)
-                .HasColumnName("display_name");
-            entity.Property(e => e.GroomPriceMax)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("groom_price_max");
-            entity.Property(e => e.GroomPriceMin)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("groom_price_min");
-            entity.Property(e => e.UpdatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("updated_at");
-            entity.Property(e => e.WeightMaxKg)
-                .HasColumnType("decimal(5, 2)")
-                .HasColumnName("weight_max_kg");
-            entity.Property(e => e.WeightMinKg)
-                .HasColumnType("decimal(5, 2)")
-                .HasColumnName("weight_min_kg");
         });
 
         modelBuilder.Entity<Product>(entity =>
@@ -900,6 +917,26 @@ public partial class ShopPetDatabaseContext : DbContext
             entity.HasOne(d => d.Employee).WithMany(p => p.ShiftRequests)
                 .HasForeignKey(d => d.EmployeeId)
                 .HasConstraintName("FK_Request_Employee");
+        });
+
+        modelBuilder.Entity<Species>(entity =>
+        {
+            entity.HasKey(e => e.SpeciesId).HasName("PK__Species__B23DC5C26FD9DAE5");
+
+            entity.HasIndex(e => e.SpeciesName, "UQ__Species__E552C1035D0E7C5A").IsUnique();
+
+            entity.Property(e => e.SpeciesId).HasColumnName("species_id");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created_at");
+            entity.Property(e => e.SpeciesName)
+                .HasMaxLength(50)
+                .HasColumnName("species_name");
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("updated_at");
         });
 
         modelBuilder.Entity<Staff>(entity =>
@@ -1211,47 +1248,28 @@ public partial class ShopPetDatabaseContext : DbContext
                 .HasColumnName("status");
         });
 
-        modelBuilder.Entity<VwPetWithSizePricing>(entity =>
+        modelBuilder.Entity<VwPetWithBreedPricing>(entity =>
         {
             entity
                 .HasNoKey()
-                .ToView("vw_PetWithSizePricing");
+                .ToView("vw_PetWithBreedPricing");
 
-            entity.Property(e => e.BathPriceMax)
+            entity.Property(e => e.BathPrice)
                 .HasColumnType("decimal(10, 2)")
-                .HasColumnName("bath_price_max");
-            entity.Property(e => e.BathPriceMin)
+                .HasColumnName("bath_price");
+            entity.Property(e => e.Breed)
+                .HasMaxLength(100)
+                .HasColumnName("breed");
+            entity.Property(e => e.GroomPrice)
                 .HasColumnType("decimal(10, 2)")
-                .HasColumnName("bath_price_min");
-            entity.Property(e => e.CustomerId).HasColumnName("customer_id");
-            entity.Property(e => e.DisplayName)
-                .HasMaxLength(50)
-                .HasColumnName("display_name");
-            entity.Property(e => e.GroomPriceMax)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("groom_price_max");
-            entity.Property(e => e.GroomPriceMin)
-                .HasColumnType("decimal(10, 2)")
-                .HasColumnName("groom_price_min");
+                .HasColumnName("groom_price");
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.PetName)
                 .HasMaxLength(100)
                 .HasColumnName("pet_name");
-            entity.Property(e => e.SizeGroupCode)
-                .HasMaxLength(20)
-                .HasColumnName("size_group_code");
             entity.Property(e => e.Species)
                 .HasMaxLength(50)
                 .HasColumnName("species");
-            entity.Property(e => e.WeightKg)
-                .HasColumnType("decimal(5, 2)")
-                .HasColumnName("weight_kg");
-            entity.Property(e => e.WeightMaxKg)
-                .HasColumnType("decimal(5, 2)")
-                .HasColumnName("weight_max_kg");
-            entity.Property(e => e.WeightMinKg)
-                .HasColumnType("decimal(5, 2)")
-                .HasColumnName("weight_min_kg");
         });
 
         modelBuilder.Entity<WorkSchedule>(entity =>

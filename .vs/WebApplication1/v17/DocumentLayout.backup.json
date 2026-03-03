@@ -1,66 +1,74 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\",
+  "WorkspaceRootPath": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\models\\vpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\data\\shoppetdatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:data\\shoppetdatabasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\models\\vpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:models\\vpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\petshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\petshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:petshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|WebApplication1.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|d:\\1_f_matierials\\k\u1EF3 5\\prnn\\webapplication1\\projectojt\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55AE5D21-1057-4F46-BF60-614D052815F4}|PetShop.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,158 +78,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VPayment.cs",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Models\\VPayment.cs",
-              "RelativeDocumentMoniker": "Models\\VPayment.cs",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Models\\VPayment.cs",
-              "RelativeToolTip": "Models\\VPayment.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA5wBcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T09:06:01.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PetShop",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\PetShop.csproj",
-              "RelativeDocumentMoniker": "PetShop.csproj",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\PetShop.csproj",
-              "RelativeToolTip": "PetShop.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-26T09:03:59.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADwBAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:23:47.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:22:11.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:22:07.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:23:21.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:23:22.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:22:04.043Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T06:57:11.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-25T08:24:19.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-25T08:26:21.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "ShopPetDatabaseContext.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Data\\ShopPetDatabaseContext.cs",
+              "RelativeDocumentMoniker": "Data\\ShopPetDatabaseContext.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Data\\ShopPetDatabaseContext.cs*",
+              "RelativeToolTip": "Data\\ShopPetDatabaseContext.cs*",
+              "ViewState": "AgIAABgAAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T08:21:58.142Z",
+              "WhenOpened": "2026-03-03T06:54:51.04Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
+              "Title": "PetShop.csproj",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj",
+              "RelativeDocumentMoniker": "PetShop.csproj",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj",
+              "RelativeToolTip": "PetShop.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-26T09:03:59.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADwBAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:23:47.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:22:11.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:22:07.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Program.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Program.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -230,42 +169,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "VPayment.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\VPayment.cs",
+              "RelativeDocumentMoniker": "Models\\VPayment.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\VPayment.cs",
+              "RelativeToolTip": "Models\\VPayment.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T08:24:17.563Z",
+              "WhenOpened": "2026-02-26T09:06:01.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:23:21.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:23:22.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-25T08:22:04.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-25T08:23:23.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T08:24:19.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-25T08:26:21.074Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T08:21:58.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T08:24:17.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-25T08:23:23.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "DocumentMoniker": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\1_F_Matierials\\K\u1EF3 5\\PRNN\\WebApplication1\\Projectojt\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-25T08:22:06.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T08:22:06.011Z"
             }
           ]
         }

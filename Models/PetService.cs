@@ -24,4 +24,6 @@ public partial class PetService
     public DateTime? UpdatedAt { get; set; }
 
     public virtual ICollection<BookingService> BookingServices { get; set; } = new List<BookingService>();
+
+    public virtual ICollection<BreedPricing> BreedPricings { get; set; } = new List<BreedPricing>();
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\PetShop.csproj": {}
+    "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj": {}
   },
   "projects": {
-    "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\PetShop.csproj": {
+    "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\PetShop.csproj",
+        "projectUniqueName": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj",
         "projectName": "PetShop",
-        "projectPath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\PetShop.csproj",
+        "projectPath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\obj\\",
+        "outputPath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

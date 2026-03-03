@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "puEQ8+Vzzk4=",
+  "dgSpecHash": "Npxo1VVVYLI=",
   "success": true,
-  "projectFilePath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\PetShop.csproj",
+  "projectFilePath": "D:\\1_F_Matierials\\Kỳ 5\\PRNN\\WebApplication1\\Projectojt\\PetShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
