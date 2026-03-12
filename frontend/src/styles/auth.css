@@ -1,0 +1,168 @@
+body{
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#FFFDF8;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:#6FD5DD;
+color:white;
+position:absolute;
+width:100%;
+}
+
+.nav-links a{
+margin:0 15px;
+cursor:pointer;
+font-weight:500;
+}
+
+.login-btn{
+background:#FFC94D;
+padding:8px 18px;
+border-radius:20px;
+text-decoration:none;
+color:#34495E;
+font-weight:bold;
+}
+
+/* BACKGROUND PAGE */
+.auth-page{
+width:100%;
+height:100vh;
+display:flex;
+}
+
+/* CARD */
+
+.auth-card{
+display:flex;
+width:100%;
+height:100vh;
+background:white;
+border-radius:0;
+overflow:hidden;
+box-shadow:none;
+}
+
+/* LEFT */
+
+.auth-left{
+width:50%;
+background:url("https://images.unsplash.com/photo-1601758228041-f3b2795255f1");
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:80px;
+font-size:24px;
+}
+
+
+/* RIGHT */
+
+.auth-right{
+width:50%;
+padding:120px 120px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background:#ffffff;
+}
+
+.auth-right h3{
+margin-bottom:20px;
+color:#34495E;
+}
+
+/* INPUT */
+
+.auth-right input{
+width:100%;
+padding:16px;
+margin-bottom:20px;
+border:1px solid #e6e6e6;
+border-radius:8px;  
+font-size:16px;
+background:#ffffff;
+color:#333;
+}
+
+/* BUTTON */
+
+.auth-right form button{
+width:100%;
+padding:16px;
+background:#6FD5DD;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+}
+
+.auth-right form button:hover{
+background:#59c5cc;
+}
+
+/* LINK */
+
+.forgot{
+font-size:13px;
+color:#888;
+display:block;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.logo-home{
+position:absolute;
+top:20px;
+right:40px;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+color:#34495E;
+}
+
+.google-login-btn{
+width:100%;
+margin-top:20px;
+padding:14px 20px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+background:white;
+border:2px solid #dcdcdc;
+border-radius:40px;
+
+font-size:16px;
+font-weight:500;
+color:#444;
+
+cursor:pointer;
+transition:0.2s;
+}
+
+.google-login-btn img{
+width:22px;
+height:22px;
+}
+
+.google-login-btn:hover{
+background:#f7f7f7;
+border-color:#cfcfcf;
+}
