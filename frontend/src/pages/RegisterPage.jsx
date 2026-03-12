@@ -37,7 +37,6 @@ export default function RegisterPage(){
         🐾 PetShop
       </Link>
 
-      <div className="auth-card">
 
         {/* BÊN TRÁI */}
         <div className="auth-left">
@@ -116,7 +115,6 @@ export default function RegisterPage(){
 
       </div>
 
-    </div>
 
   )
 }
