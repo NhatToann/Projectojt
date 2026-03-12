@@ -1,0 +1,108 @@
+@model IReadOnlyList<PetShop.Models.CartItem>
+
+@{
+    string FormatVnd(decimal value) => string.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:c0}", value);
+    var total = Model.Sum(x => x.Price * x.Quantity);
+    var totalQty = Model.Sum(x => x.Quantity);
+}
+
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Giỏ hàng - PetShop</title>
+    <style>
+        :root { color-scheme: light dark; }
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0f1116; color: rgba(255,255,255,.9); }
+        a { color: inherit; text-decoration: none; }
+        .wrap { width: min(1100px, 92vw); margin: 0 auto; padding: 28px 0 40px; }
+        h1 { margin: 0 0 10px; font-size: 34px; }
+        .sub { opacity:.78; margin-bottom: 14px; display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        table { width: 100%; border-collapse: collapse; border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; overflow: hidden; }
+        th, td { padding: 12px 12px; border-bottom: 1px solid rgba(255,255,255,0.10); text-align: left; }
+        th { font-size: 12px; opacity:.8; background: rgba(255,255,255,0.06); }
+        .img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(255,255,255,0.18); }
+        .price { font-weight: 900; }
+        .qtyCtl { display:inline-flex; align-items:center; gap: 8px; flex-wrap: wrap; }
+        .qtyBtn { width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.06); color: inherit; cursor: pointer; }
+        .qtyBtn:hover { border-color: rgba(100,108,255,0.55); }
+        .removeBtn { height: 34px; padding: 0 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,0,0,0.10); color: inherit; cursor: pointer; }
+        .removeBtn:hover { border-color: rgba(255,120,120,0.55); }
+        tfoot td { background: rgba(255,255,255,0.04); }
+        .empty { padding: 16px 12px; opacity: .75; border: 1px dashed rgba(255,255,255,.22); border-radius: 14px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="sub">
+            <a href="/products">← Tiếp tục mua hàng</a>
+            <a href="/cart">Giỏ hàng (@totalQty)</a>
+        </div>
+
+        <h1>Giỏ hàng</h1>
+
+        @if (Model.Count == 0)
+        {
+            <div class="empty">Giỏ hàng đang trống.</div>
+        }
+        else
+        {
+            <div class="sub">
+                <div>Tổng sản phẩm: <b>@totalQty</b></div>
+                <div>Tổng tiền: <b>@FormatVnd(total)</b></div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tạm tính</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                        <tr>
+                            <td>
+                                @if (!string.IsNullOrWhiteSpace(i.ImageUrl))
+                                {
+                                    <img class="img" src="@i.ImageUrl" alt="@i.Name" />
+                                }
+                            </td>
+                            <td>@i.Name</td>
+                            <td class="price">@FormatVnd(i.Price)</td>
+                            <td>
+                                <div class="qtyCtl">
+                                    <form method="post" action="/cart/dec/@i.ProductId" style="margin:0">
+                                        <button class="qtyBtn" type="submit" title="Giảm">-</button>
+                                    </form>
+                                    <b>@i.Quantity</b>
+                                    <form method="post" action="/cart/add/@i.ProductId" style="margin:0">
+                                        <input type="hidden" name="qty" value="1" />
+                                        <input type="hidden" name="goCart" value="true" />
+                                        <button class="qtyBtn" type="submit" title="Tăng">+</button>
+                                    </form>
+                                    <form method="post" action="/cart/remove/@i.ProductId" style="margin:0">
+                                        <button class="removeBtn" type="submit" title="Xóa">Xóa</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td class="price">@FormatVnd(i.Price * i.Quantity)</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align:right; opacity:.85"><b>Tổng tiền</b></td>
+                        <td class="price">@FormatVnd(total)</td>
+                    </tr>
+                </tfoot>
+            </table>
+        }
+    </div>
+</body>
+</html>

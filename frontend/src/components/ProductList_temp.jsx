@@ -8,8 +8,6 @@ export default function ProductList_temp() {
 
   useEffect(() => {
     const ac = new AbortController()
-    setLoading(true)
-    setError('')
     fetchProducts_temp({ signal: ac.signal })
       .then((data) => setItems(Array.isArray(data) ? data : []))
       .catch((e) => {
