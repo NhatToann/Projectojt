@@ -36,7 +36,7 @@ public sealed record ResetPasswordRequestDto(
 );
 
 public sealed record AuthResponseDto(
-    int CustomerId,
+    int UserId,
     string Name,
     string Email,
     string Role,

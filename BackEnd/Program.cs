@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,8 +23,20 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<PetShop.Data.ShopPetDatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBDefault")));
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromHours(8);
+});
+
 builder.Services.AddScoped<PetShop.Interfaces.IProductRepository_temp, PetShop.Repositories.ProductRepository_temp>();
 builder.Services.AddScoped<PetShop.Interfaces.IProductService_temp, PetShop.Services.ProductService_temp>();
+
+builder.Services.AddScoped<PetShop.Interfaces.IAuthRepository, PetShop.Repositories.AuthRepository>();
+builder.Services.AddScoped<PetShop.Interfaces.IAuthService, PetShop.Services.AuthService>();
+builder.Services.AddScoped<PetShop.Interfaces.IEmailService, PetShop.Services.EmailService>();
 
 var app = builder.Build();
 
@@ -37,10 +49,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseCors("FrontendDev");
+
+app.UseSession();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=ProductsPage}/{action=Index}/{id?}");
 
 app.Run();
