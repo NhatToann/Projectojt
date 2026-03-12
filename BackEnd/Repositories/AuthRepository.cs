@@ -16,10 +16,37 @@ public sealed class AuthRepository : IAuthRepository
 
     public Task<Customer?> GetCustomerByEmailAsync(string email, CancellationToken ct = default)
     {
-        var normalizedEmail = email.Trim().ToLower();
+        var normalizedEmail = NormalizeEmail(email);
 
         return _db.Customers
-            .FirstOrDefaultAsync(x => x.Email != null && x.Email.ToLower() == normalizedEmail, ct);
+            .FirstOrDefaultAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct);
+    }
+
+    public Task<Staff?> GetStaffByEmailAsync(string email, CancellationToken ct = default)
+    {
+        var normalizedEmail = NormalizeEmail(email);
+
+        return _db.Staff
+            .FirstOrDefaultAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct);
+    }
+
+    public Task<Doctor?> GetDoctorByEmailAsync(string email, CancellationToken ct = default)
+    {
+        var normalizedEmail = NormalizeEmail(email);
+
+        return _db.Doctors
+            .FirstOrDefaultAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct);
+    }
+
+    public Task<Admin?> GetAdminByEmailOrUsernameAsync(string input, CancellationToken ct = default)
+    {
+        var normalizedInput = NormalizeEmail(input);
+
+        return _db.Admins
+            .FirstOrDefaultAsync(x =>
+                (x.Email ?? string.Empty).Trim().ToLower() == normalizedInput
+                || x.Username.Trim().ToLower() == normalizedInput,
+                ct);
     }
 
     public async Task<Customer> CreateCustomerAsync(Customer customer, CancellationToken ct = default)
@@ -33,5 +60,10 @@ public sealed class AuthRepository : IAuthRepository
     {
         _db.Customers.Update(customer);
         await _db.SaveChangesAsync(ct);
+    }
+
+    private static string NormalizeEmail(string input)
+    {
+        return (input ?? string.Empty).Trim().ToLowerInvariant();
     }
 }
