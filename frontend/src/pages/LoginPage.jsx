@@ -29,7 +29,6 @@ export default function LoginPage(){
         🐾 PetShop
       </Link>
 
-      <div className="auth-card">
 
         {/* BÊN TRÁI */}
         <div className="auth-left">
@@ -92,7 +91,6 @@ export default function LoginPage(){
 
       </div>
 
-    </div>
 
   )
 }
