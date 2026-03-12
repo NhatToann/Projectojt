@@ -1,0 +1,27 @@
+<div style='font-family:Arial,sans-serif;max-width:700px;margin:auto'>
+  <h2>PetShop - Hoa don don hang</h2>
+  <p>Xin chao <strong>{{CustomerName}}</strong>,</p>
+  <p>Cam on ban da mua hang. Duoi day la thong tin don hang <strong>{{OrderCode}}</strong>.</p>
+  <table style='width:100%;border-collapse:collapse'>
+    <thead>
+      <tr style='background:#f5f5f5'>
+        <th style='padding:8px;border:1px solid #ddd;text-align:left'>San pham/Dich vu</th>
+        <th style='padding:8px;border:1px solid #ddd;text-align:center'>So luong</th>
+        <th style='padding:8px;border:1px solid #ddd;text-align:right'>Don gia</th>
+        <th style='padding:8px;border:1px solid #ddd;text-align:right'>Thanh tien</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each Items}}
+      <tr>
+        <td style='padding:8px;border:1px solid #ddd'>{{ItemName}}</td>
+        <td style='padding:8px;border:1px solid #ddd;text-align:center'>{{Quantity}}</td>
+        <td style='padding:8px;border:1px solid #ddd;text-align:right'>{{UnitPrice}} VND</td>
+        <td style='padding:8px;border:1px solid #ddd;text-align:right'>{{LineTotal}} VND</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <p style='text-align:right;margin-top:12px'><strong>Tong cong: {{TotalAmount}} VND</strong></p>
+  <p style='color:#666'>Neu can ho tro, vui long lien he bo phan CSKH cua PetShop.</p>
+</div>
