@@ -1,20 +1,45 @@
+# =========================
+# .NET build folders
+# =========================
+bin/
+obj/
+
 # Visual Studio
 .vs/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
 
-# .NET build
-bin/
-obj/
+# Rider / VSCode
+.idea/
+.vscode/
 
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
 # Node / React
+# =========================
 node_modules/
 dist/
 build/
 
-# Logs
-*.log
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# OS
-Thumbs.db
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+
+# =========================
+# OS files
+# =========================
 .DS_Store
+Thumbs.db
