@@ -66,22 +66,63 @@ public sealed class AuthService : IAuthService
 
     public async Task<AuthResponseDto> LoginAsync(LoginRequestDto request, CancellationToken ct = default)
     {
-        var email = NormalizeEmail(request.Email);
+        var identity = (request.Email ?? string.Empty).Trim();
+        var normalizedEmail = NormalizeEmail(request.Email);
         var password = request.Password ?? string.Empty;
 
-        if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+        if (string.IsNullOrWhiteSpace(identity) || string.IsNullOrWhiteSpace(password))
         {
             throw new UnauthorizedAccessException("Email hoặc mật khẩu không hợp lệ.");
         }
 
-        var customer = await _authRepository.GetCustomerByEmailAsync(email, ct);
+        var staff = await _authRepository.GetStaffByEmailAsync(normalizedEmail, ct);
+        if (staff is not null && IsPasswordValid(password, staff.Password))
+        {
+            var role = string.Equals(staff.Position, "admin", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(staff.Position, "quản lý", StringComparison.OrdinalIgnoreCase)
+                ? "admin"
+                : "staff";
+
+            return new AuthResponseDto(
+                staff.StaffId,
+                staff.Name,
+                staff.Email ?? normalizedEmail,
+                role,
+                "active"
+            );
+        }
+
+        var doctor = await _authRepository.GetDoctorByEmailAsync(normalizedEmail, ct);
+        if (doctor is not null && IsPasswordValid(password, doctor.Password))
+        {
+            return new AuthResponseDto(
+                doctor.DoctorId,
+                doctor.Name,
+                doctor.Email,
+                "doctor",
+                "active"
+            );
+        }
+
+        var admin = await _authRepository.GetAdminByEmailOrUsernameAsync(identity, ct);
+        if (admin is not null && IsPasswordValid(password, admin.Password))
+        {
+            return new AuthResponseDto(
+                admin.AdminId,
+                admin.Name ?? admin.Username,
+                admin.Email ?? normalizedEmail,
+                "admin",
+                "active"
+            );
+        }
+
+        var customer = await _authRepository.GetCustomerByEmailAsync(normalizedEmail, ct);
         if (customer is null || string.IsNullOrWhiteSpace(customer.Password))
         {
             throw new UnauthorizedAccessException("Email hoặc mật khẩu không đúng.");
         }
 
-        var isValidPassword = BCrypt.Net.BCrypt.Verify(password, customer.Password);
-        if (!isValidPassword)
+        if (!IsPasswordValid(password, customer.Password))
         {
             throw new UnauthorizedAccessException("Email hoặc mật khẩu không đúng.");
         }
@@ -229,8 +270,14 @@ public sealed class AuthService : IAuthService
             throw new ArgumentException("Email không được để trống.");
         }
 
+        var hasAccount = await _authRepository.EmailExistsInAnyRoleAsync(email, ct);
+        if (!hasAccount)
+        {
+            throw new KeyNotFoundException("Email chưa đăng ký tài khoản.");
+        }
+
         var customer = await _authRepository.GetCustomerByEmailAsync(email, ct)
-            ?? throw new KeyNotFoundException("Không tìm thấy tài khoản với email này.");
+            ?? throw new KeyNotFoundException("Email chưa có tài khoản khách hàng để nhận OTP.");
 
         var otp = GenerateOtp();
         customer.OtpCode = otp;
@@ -409,6 +456,23 @@ public sealed class AuthService : IAuthService
                || value.Contains("YOUR-", StringComparison.OrdinalIgnoreCase)
                || value.Contains("example", StringComparison.OrdinalIgnoreCase)
                || value.Contains("placeholder", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsPasswordValid(string password, string? storedPassword)
+    {
+        if (string.IsNullOrWhiteSpace(storedPassword))
+        {
+            return false;
+        }
+
+        var normalizedStored = storedPassword.Trim();
+
+        if (normalizedStored.StartsWith("$2", StringComparison.Ordinal))
+        {
+            return BCrypt.Net.BCrypt.Verify(password, normalizedStored);
+        }
+
+        return string.Equals(password, normalizedStored, StringComparison.Ordinal);
     }
 
     private static AuthResponseDto MapToAuthResponse(Customer customer)

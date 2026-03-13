@@ -42,6 +42,13 @@ builder.Services.AddSession(options =>
 builder.Services.AddScoped<PetShop.Interfaces.IProductRepository_temp, PetShop.Repositories.ProductRepository_temp>();
 builder.Services.AddScoped<PetShop.Interfaces.IProductService_temp, PetShop.Services.ProductService_temp>();
 
+builder.Services.AddScoped<PetShop.Interfaces.IAuthRepository, PetShop.Repositories.AuthRepository>();
+builder.Services.AddScoped<PetShop.Interfaces.IAuthService, PetShop.Services.AuthService>();
+builder.Services.AddScoped<PetShop.Interfaces.IEmailService, PetShop.Services.EmailService>();
+
+builder.Services.AddScoped<PetShop.Interfaces.IPetServiceRepository, PetShop.Repositories.PetServiceRepository>();
+builder.Services.AddScoped<PetShop.Interfaces.IPetServiceService, PetShop.Services.PetServiceService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
