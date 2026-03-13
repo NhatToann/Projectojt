@@ -62,6 +62,17 @@ public sealed class AuthRepository : IAuthRepository
         await _db.SaveChangesAsync(ct);
     }
 
+    public async Task<bool> EmailExistsInAnyRoleAsync(string email, CancellationToken ct = default)
+    {
+        var normalizedEmail = NormalizeEmail(email);
+
+        return await _db.Customers.AnyAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct)
+            || await _db.Staff.AnyAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct)
+            || await _db.Doctors.AnyAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct)
+            || await _db.Admins.AnyAsync(x => (x.Email ?? string.Empty).Trim().ToLower() == normalizedEmail, ct)
+            || await _db.Admins.AnyAsync(x => x.Username.Trim().ToLower() == normalizedEmail, ct);
+    }
+
     private static string NormalizeEmail(string input)
     {
         return (input ?? string.Empty).Trim().ToLowerInvariant();

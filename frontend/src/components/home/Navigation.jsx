@@ -9,7 +9,7 @@ export default function Navigation() {
   const navItems = [
     { name: 'Trang chủ', href: '/', icon: <FaHome /> },
     { name: 'Sản phẩm', href: '/products', icon: <GiTennisBall /> },
-    { name: 'Danh mục', href: '/categories', icon: <MdCategory /> },
+    { name: 'Dịch vụ chăm sóc', href: '/services', icon: <MdCategory /> },
     { name: 'Khuyến mãi', href: '/promotions', icon: <FaGift /> },
     { name: 'Giới thiệu', href: '/about', icon: <FaBookOpen /> },
     { name: 'Liên hệ', href: '/contact', icon: <FaPhoneAlt /> },

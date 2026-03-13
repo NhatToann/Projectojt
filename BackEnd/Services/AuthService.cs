@@ -270,8 +270,14 @@ public sealed class AuthService : IAuthService
             throw new ArgumentException("Email không được để trống.");
         }
 
+        var hasAccount = await _authRepository.EmailExistsInAnyRoleAsync(email, ct);
+        if (!hasAccount)
+        {
+            throw new KeyNotFoundException("Email chưa đăng ký tài khoản.");
+        }
+
         var customer = await _authRepository.GetCustomerByEmailAsync(email, ct)
-            ?? throw new KeyNotFoundException("Không tìm thấy tài khoản với email này.");
+            ?? throw new KeyNotFoundException("Email chưa có tài khoản khách hàng để nhận OTP.");
 
         var otp = GenerateOtp();
         customer.OtpCode = otp;

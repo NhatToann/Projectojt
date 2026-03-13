@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import {
   resetPasswordApi,
@@ -15,24 +15,38 @@ export default function ForgotPasswordPage() {
     newPassword: "",
     confirmPassword: "",
   })
+  const [verifiedEmail, setVerifiedEmail] = useState("")
   const [resetToken, setResetToken] = useState("")
   const [otpError, setOtpError] = useState("")
   const [resetError, setResetError] = useState("")
-  const [otpResult, setOtpResult] = useState(null)
-  const [resetResult, setResetResult] = useState(null)
+  const [actionMessage, setActionMessage] = useState("")
   const [sendOtpLoading, setSendOtpLoading] = useState(false)
   const [verifyOtpLoading, setVerifyOtpLoading] = useState(false)
   const [resetLoading, setResetLoading] = useState(false)
+  const [resendLoading, setResendLoading] = useState(false)
+  const [resendCountdown, setResendCountdown] = useState(0)
 
   const isBusy = useMemo(
-    () => sendOtpLoading || verifyOtpLoading || resetLoading,
-    [sendOtpLoading, verifyOtpLoading, resetLoading],
+    () => sendOtpLoading || verifyOtpLoading || resetLoading || resendLoading,
+    [sendOtpLoading, verifyOtpLoading, resetLoading, resendLoading],
   )
+
+  useEffect(() => {
+    if (step !== 2 || resendCountdown <= 0) {
+      return
+    }
+
+    const timer = setInterval(() => {
+      setResendCountdown((prev) => (prev > 0 ? prev - 1 : 0))
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [step, resendCountdown])
 
   const onSendOtp = async (e) => {
     e.preventDefault()
     setOtpError("")
-    setOtpResult(null)
+    setActionMessage("")
 
     if (!otpForm.email.trim()) {
       setOtpError("Vui lòng nhập email để gửi OTP")
@@ -41,10 +55,11 @@ export default function ForgotPasswordPage() {
 
     setSendOtpLoading(true)
     try {
-      const data = await sendEmailOtpApi({ email: otpForm.email.trim() })
-      setOtpResult(data)
+      await sendEmailOtpApi({ email: otpForm.email.trim() })
       setResetForm((s) => ({ ...s, email: otpForm.email.trim() }))
       setResetToken("")
+      setResendCountdown(120)
+      setActionMessage("Đã gửi OTP đến email.")
       setStep(2)
     } catch (err) {
       setOtpError(err?.message || "Send OTP failed")
@@ -53,9 +68,35 @@ export default function ForgotPasswordPage() {
     }
   }
 
+  const onResendOtp = async () => {
+    if (resendCountdown > 0 || resendLoading) {
+      return
+    }
+
+    setOtpError("")
+    setActionMessage("")
+
+    if (!otpForm.email.trim()) {
+      setOtpError("Vui lòng nhập email để gửi OTP")
+      return
+    }
+
+    setResendLoading(true)
+    try {
+      await sendEmailOtpApi({ email: otpForm.email.trim() })
+      setResendCountdown(120)
+      setActionMessage("Đã gửi lại OTP.")
+    } catch (err) {
+      setOtpError(err?.message || "Send OTP failed")
+    } finally {
+      setResendLoading(false)
+    }
+  }
+
   const onVerifyOtp = async (e) => {
     e.preventDefault()
     setOtpError("")
+    setActionMessage("")
 
     if (!otpForm.email.trim() || !otpForm.otpCode.trim()) {
       setOtpError("Vui lòng nhập email và OTP")
@@ -68,9 +109,12 @@ export default function ForgotPasswordPage() {
         email: otpForm.email.trim(),
         otpCode: otpForm.otpCode.trim(),
       })
-      setOtpResult(data)
-      setResetForm((s) => ({ ...s, email: otpForm.email.trim() }))
+      const normalizedEmail = otpForm.email.trim()
+      setResetForm((s) => ({ ...s, email: normalizedEmail }))
+      setVerifiedEmail(normalizedEmail)
       setResetToken(data?.message || "")
+      setResendCountdown(0)
+      setActionMessage("OTP hợp lệ. Bạn có thể đặt mật khẩu mới.")
       setStep(3)
     } catch (err) {
       setOtpError(err?.message || "Verify OTP failed")
@@ -82,7 +126,7 @@ export default function ForgotPasswordPage() {
   const onResetPassword = async (e) => {
     e.preventDefault()
     setResetError("")
-    setResetResult(null)
+    setActionMessage("")
 
     if (!resetForm.email.trim()) {
       setResetError("Vui lòng nhập email")
@@ -99,6 +143,11 @@ export default function ForgotPasswordPage() {
       return
     }
 
+    if (verifiedEmail && resetForm.email.trim().toLowerCase() !== verifiedEmail.toLowerCase()) {
+      setResetError("Email không khớp với email đã xác thực OTP.")
+      return
+    }
+
     setResetLoading(true)
     try {
       const payload = {
@@ -108,8 +157,8 @@ export default function ForgotPasswordPage() {
         confirmPassword: resetForm.confirmPassword,
       }
 
-      const data = await resetPasswordApi(payload)
-      setResetResult(data)
+      await resetPasswordApi(payload)
+      setActionMessage("Mật khẩu đã được cập nhật thành công. Vui lòng đăng nhập lại.")
     } catch (err) {
       setResetError(err?.message || "Reset password failed")
     } finally {
@@ -146,7 +195,7 @@ export default function ForgotPasswordPage() {
                 {sendOtpLoading ? "Đang gửi OTP..." : "Gửi OTP"}
               </button>
               {otpError ? <div className="auth-error">{otpError}</div> : null}
-              {otpResult ? <div className="auth-success">Đã gửi OTP đến email.</div> : null}
+              {actionMessage ? <div className="auth-success">{actionMessage}</div> : null}
             </form>
           ) : null}
 
@@ -171,7 +220,15 @@ export default function ForgotPasswordPage() {
               <button type="submit" disabled={isBusy}>
                 {verifyOtpLoading ? "Đang xác minh..." : "Xác minh OTP"}
               </button>
+              <button type="button" className="google-login-btn" onClick={onResendOtp} disabled={isBusy || resendCountdown > 0}>
+                {resendLoading
+                  ? "Đang gửi lại OTP..."
+                  : resendCountdown > 0
+                    ? `Gửi lại OTP (${resendCountdown}s)`
+                    : "Gửi lại OTP"}
+              </button>
               {otpError ? <div className="auth-error">{otpError}</div> : null}
+              {actionMessage ? <div className="auth-success">{actionMessage}</div> : null}
             </form>
           ) : null}
 
@@ -182,7 +239,7 @@ export default function ForgotPasswordPage() {
                 placeholder="Email"
                 value={resetForm.email}
                 onChange={(e) => setResetForm((s) => ({ ...s, email: e.target.value }))}
-                disabled={isBusy}
+                disabled={isBusy || Boolean(verifiedEmail)}
                 required
               />
               <input
@@ -205,8 +262,7 @@ export default function ForgotPasswordPage() {
                 {resetLoading ? "Đang reset..." : "Reset Password"}
               </button>
               {resetError ? <div className="auth-error">{resetError}</div> : null}
-              {resetToken ? <div className="auth-success">Xác minh OTP thành công. Bạn có thể đặt mật khẩu mới.</div> : null}
-              {resetResult ? <div className="auth-success">Mật khẩu đã được cập nhật thành công. Vui lòng đăng nhập lại.</div> : null}
+              {actionMessage ? <div className="auth-success">{actionMessage}</div> : null}
             </form>
           ) : null}
 
