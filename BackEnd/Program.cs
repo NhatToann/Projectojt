@@ -20,8 +20,16 @@ builder.Services.AddCors(options =>
     });
 });
 
+var dbConnectionString = builder.Configuration.GetConnectionString("DBDefault");
+if (string.IsNullOrWhiteSpace(dbConnectionString))
+{
+    throw new InvalidOperationException(
+        "Missing connection string 'ConnectionStrings:DBDefault'. " +
+        "Add it to appsettings.json/appsettings.Development.json, or set environment variable 'ConnectionStrings__DBDefault'.");
+}
+
 builder.Services.AddDbContext<PetShop.Data.ShopPetDatabaseContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DBDefault")));
+    options.UseSqlServer(dbConnectionString));
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>

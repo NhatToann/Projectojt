@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaPhone, FaShoppingCart, FaSearch } from "react-icons/fa"
 
-export default function Header() {   // bỏ cartCount
+export default function Header({ cartCount = 0 }) {
   const [searchTerm, setSearchTerm] = useState('')
   const [showSuggestions, setShowSuggestions] = useState(false)
 
@@ -92,7 +92,9 @@ export default function Header() {   // bỏ cartCount
             <span className="cart-icon">
               <FaShoppingCart />
             </span>
-            <span className="cart-text">Giỏ hàng</span>
+            <span className="cart-text">
+              Giỏ hàng{cartCount > 0 ? ` (${cartCount})` : ''}
+            </span>
           </a>
         </div>
 

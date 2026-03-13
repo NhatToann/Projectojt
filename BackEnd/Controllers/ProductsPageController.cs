@@ -16,43 +16,10 @@ public sealed class ProductsPageController : Controller
 
     [HttpGet("/")]
     [HttpGet("/products")]
-    public async Task<IActionResult> Index([FromQuery] string? q, CancellationToken ct)
+    public IActionResult Index()
     {
-        q = (q ?? string.Empty).Trim();
-
-        var query = _db.Products
-            .AsNoTracking()
-            .Include(p => p.Category)
-            .Include(p => p.Supplier)
-            .AsQueryable();
-
-        if (q.Length > 0)
-        {
-            query = query.Where(p =>
-                (p.Name != null && p.Name.Contains(q)) ||
-                (p.Description != null && p.Description.Contains(q)) ||
-                (p.Category != null && p.Category.Name != null && p.Category.Name.Contains(q)) ||
-                (p.Supplier != null && p.Supplier.NameCompany != null && p.Supplier.NameCompany.Contains(q)));
-        }
-
-        var items = await query
-            .OrderBy(p => p.ProductId)
-            .Select(p => new ProductDto_temp(
-                p.ProductId,
-                p.Name,
-                p.Price,
-                p.StockQuantity,
-                p.Description,
-                p.ImageUrl,
-                p.CategoryId,
-                p.Category != null ? p.Category.Name : null,
-                p.SupplierId,
-                p.Supplier != null ? p.Supplier.NameCompany : null
-            ))
-            .ToListAsync(ct);
-
-        ViewData["q"] = q;
-        return View(items);
+        // Dùng React làm trang chính: chuyển sang frontend /products
+        return Redirect("http://localhost:5173/products");
     }
 
     [HttpGet("/products/{id:int}")]

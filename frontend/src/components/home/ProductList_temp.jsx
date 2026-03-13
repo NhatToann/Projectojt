@@ -115,10 +115,10 @@ export default function ProductList_temp({ onAddToCart }) {
       ) : (
         <div className="products-grid">
           {visibleProducts.map(product => (
-            <ProductCard 
-              key={product.productId} 
-              product={product} 
-              onAddToCart={() => {}}   // bỏ backend add to cart
+            <ProductCard
+              key={product.productId}
+              product={product}
+              onAddToCart={onAddToCart}
             />
           ))}
         </div>
