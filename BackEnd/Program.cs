@@ -38,6 +38,9 @@ builder.Services.AddScoped<PetShop.Interfaces.IAuthRepository, PetShop.Repositor
 builder.Services.AddScoped<PetShop.Interfaces.IAuthService, PetShop.Services.AuthService>();
 builder.Services.AddScoped<PetShop.Interfaces.IEmailService, PetShop.Services.EmailService>();
 
+builder.Services.AddScoped<PetShop.Interfaces.IPetServiceRepository, PetShop.Repositories.PetServiceRepository>();
+builder.Services.AddScoped<PetShop.Interfaces.IPetServiceService, PetShop.Services.PetServiceService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
